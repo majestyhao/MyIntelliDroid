@@ -1,3 +1,5 @@
+package fu.hao.intellidroid.core;
+
 import org.apache.commons.cli.*;
 import org.apache.commons.io.FileUtils;
 
@@ -70,9 +72,16 @@ public class IntelliDroidAppAnalysis {
                 e.printStackTrace();
             }
 
+            //Output.log("Starting fu.hao.intellidroid.IntelliDroidAppAnalysis for " + (Config.AppName == null ? Config.AppDirectory : Config.AppName));
+            IntelliDroidAppAnalysis analysis = new IntelliDroidAppAnalysis();
+            analysis.analyze();
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+    }
+
+    public void analyze() throws Exception {
 
     }
 

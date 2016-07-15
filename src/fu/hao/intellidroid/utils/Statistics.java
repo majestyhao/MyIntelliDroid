@@ -1,17 +1,18 @@
 package fu.hao.intellidroid.utils;
 
-import fu.hao.intellidroid.core.IntelliDroidAppAnalysis;
-
 import java.util.Date;
 
 /**
- * Created by majes on 7/11/2016.
+ * Class: Statistics
+ * Description:
+ * Authors: Hao Fu(haofu@ucdavis.edu)
+ * Date: 7/14/2016 6:00 PM
  */
 public class Statistics {
     private static Date startTime = null;
 
     public static void startAnalysis() {
-        if (IntelliDroidAppAnalysis.Config.GenerateStats) {
+        if (Settings.getGenerateStats()) {
             startTime = new Date();
         }
     }

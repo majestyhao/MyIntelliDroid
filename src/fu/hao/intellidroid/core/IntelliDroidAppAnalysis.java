@@ -1,31 +1,23 @@
 package fu.hao.intellidroid.core;
 
+import fu.hao.intellidroid.utils.Log;
+import fu.hao.intellidroid.utils.Settings;
+import fu.hao.intellidroid.utils.Statistics;
 import org.apache.commons.cli.*;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
- * Created by majes on 7/11/2016.
+ * Class: IntelliDroidAppAnalysis
+ * Description:
+ * Authors: Hao Fu(haofu@ucdavis.edu)
+ * Date: 7/14/2016 6:00 PM
  */
 public class IntelliDroidAppAnalysis {
 
-    public static class Configuration {
-        static public Set<String> TargetMethods = new HashSet<String>();
-
-        static public String AppDirectory = null;
-        static public String AppName = null;
-        static public String OutputDirectory = null;
-
-        static public boolean PrintOutput = true;
-        static public boolean PrintConstraints = false;
-        static public boolean GenerateStats = false;
-    }
-
-    public static Configuration Config = new Configuration();
+    private final static String TAG = IntelliDroidAppAnalysis.class.getSimpleName();
 
     public static void main(String[] args) {
         Options options = new Options();
@@ -57,13 +49,13 @@ public class IntelliDroidAppAnalysis {
                 throw new ParseException("Missing target apk directory");
             }
 
-            Config.AppDirectory = operands.get(0);
-            Config.AppName = commandLine.getOptionValue("n", null);
-            Config.OutputDirectory = commandLine.getOptionValue("o", "./pathOutput");
+            Settings.setAppDirectory(operands.get(0));
+            Settings.setAppName(commandLine.getOptionValue("n", null));
+            Settings.setOutputDirectory(commandLine.getOptionValue("o", "./pathOutput"));
 
             // Clean output directory
             try {
-                File outputDirFile = new File(Config.OutputDirectory);
+                File outputDirFile = new File(Settings.getOutputDirectory());
                 outputDirFile.mkdirs();
 
                 FileUtils.cleanDirectory(outputDirFile);
@@ -72,7 +64,7 @@ public class IntelliDroidAppAnalysis {
                 e.printStackTrace();
             }
 
-            //Output.log("Starting fu.hao.intellidroid.IntelliDroidAppAnalysis for " + (Config.AppName == null ? Config.AppDirectory : Config.AppName));
+            Log.msg(TAG, "Starting fu.hao.intellidroid.IntelliDroidAppAnalysis for " + (Settings.getAppName() == null ? Settings.getAppDirectory(): Settings.getAppName()));
             IntelliDroidAppAnalysis analysis = new IntelliDroidAppAnalysis();
             analysis.analyze();
         } catch (Exception e) {
@@ -82,6 +74,24 @@ public class IntelliDroidAppAnalysis {
     }
 
     public void analyze() throws Exception {
+        Statistics.startAnalysis();
+
+        String appPath = null;
+        String manifestPath = null;
+
+        String extractedApkPath = Settings.getAppDirectory() + "/apk";
+        File extractedApkDir = new File(extractedApkPath);
+
+        if (extractedApkDir.isDirectory()) {
+            appPath = extractedApkPath + "/classes.jar";
+            manifestPath = extractedApkPath + "/AndroidManifest.xml";
+        } else {
+            Log.err(TAG, "Missing AndroidManifest.xml and/or classes.jar files in target APK directory.");
+        }
+
+        ManifestAnalysis manifestAnalysis = new ManifestAnalysis(manifestPath);
+        Log.msg(TAG, manifestAnalysis.getPackageName());
+
 
     }
 

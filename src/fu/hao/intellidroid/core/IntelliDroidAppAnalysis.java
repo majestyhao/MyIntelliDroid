@@ -1,5 +1,7 @@
 package fu.hao.intellidroid.core;
 
+import com.ibm.wala.ipa.callgraph.AnalysisScope;
+import com.ibm.wala.util.config.AnalysisScopeReader;
 import fu.hao.intellidroid.utils.Log;
 import fu.hao.intellidroid.utils.Settings;
 import fu.hao.intellidroid.utils.Statistics;
@@ -11,7 +13,7 @@ import java.util.List;
 
 /**
  * Class: IntelliDroidAppAnalysis
- * Description:
+ * Description: The main class for analysis.
  * Authors: Hao Fu(haofu@ucdavis.edu)
  * Date: 7/14/2016 6:00 PM
  */
@@ -89,10 +91,11 @@ public class IntelliDroidAppAnalysis {
             Log.err(TAG, "Missing AndroidManifest.xml and/or classes.jar files in target APK directory.");
         }
 
+        // Extract info from AndroidManifest.xml
         ManifestAnalysis manifestAnalysis = new ManifestAnalysis(manifestPath);
         Log.msg(TAG, manifestAnalysis.getPackageName());
 
-
+        AnalysisScope appScode = AnalysisScopeReader.makeJavaBinaryAnalysisScope(appPath, null);
     }
 
 }

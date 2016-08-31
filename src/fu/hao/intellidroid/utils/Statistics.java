@@ -10,10 +10,17 @@ import java.util.Date;
  */
 public class Statistics {
     private static Date startTime = null;
+    private static Date callGraphStartTime = null;
 
     public static void startAnalysis() {
         if (Settings.getGenerateStats()) {
             startTime = new Date();
+        }
+    }
+
+    public static void startCallGraph() {
+        if (Settings.getGenerateStats()) {
+            callGraphStartTime = new Date();
         }
     }
 

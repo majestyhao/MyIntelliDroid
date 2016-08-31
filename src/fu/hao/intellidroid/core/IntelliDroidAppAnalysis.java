@@ -1,7 +1,13 @@
 package fu.hao.intellidroid.core;
 
+import com.ibm.wala.classLoader.JarFileModule;
+import com.ibm.wala.classLoader.Module;
 import com.ibm.wala.ipa.callgraph.AnalysisScope;
+import com.ibm.wala.ipa.cha.ClassHierarchy;
+import com.ibm.wala.ipa.cha.IClassHierarchy;
+import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.util.config.AnalysisScopeReader;
+import fu.hao.intellidroid.core.wrappers.UIActivityMapping;
 import fu.hao.intellidroid.utils.Log;
 import fu.hao.intellidroid.utils.Settings;
 import fu.hao.intellidroid.utils.Statistics;
@@ -10,6 +16,7 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.util.List;
+import java.util.jar.JarFile;
 
 /**
  * Class: IntelliDroidAppAnalysis
@@ -95,7 +102,23 @@ public class IntelliDroidAppAnalysis {
         ManifestAnalysis manifestAnalysis = new ManifestAnalysis(manifestPath);
         Log.msg(TAG, manifestAnalysis.getPackageName());
 
-        AnalysisScope appScode = AnalysisScopeReader.makeJavaBinaryAnalysisScope(appPath, null);
+        // Represents a set of files to be analyzed: to construct from classpath:
+        AnalysisScope analysisScope = AnalysisScopeReader.makeJavaBinaryAnalysisScope(appPath, null);
+        Module androidMod = new JarFileModule(new JarFile(Settings.getAndroidLib()));
+        analysisScope.addToScope(ClassLoaderReference.Extension, androidMod);
+
+        // Get the class hierarchies for name resolution, etc
+        IClassHierarchy classHierarchy = ClassHierarchy.make(analysisScope);
+
+        /* Search for entry points and build the call graph */
+        Statistics.startCallGraph();
+
+        CallGraphInfoListener callGraphInfoListener = new CallGraphInfoListener(classHierarchy);
+        UIActivityMapping uiActivityMapping = new UIActivityMapping(classHierarchy);
+
+        // Look for the entry points and generate the call graph
+
+
     }
 
 }

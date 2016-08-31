@@ -35,6 +35,7 @@ public class Settings {
 	private static String appDirectory = null;
 	private static String appName = null;
 	private static String outputDirectory = null;
+	private static final String androidLib = "./android/android-4.3/android.jar";
 
 	private static boolean printOutput = true;
 	private static boolean printConstraints = false;
@@ -83,4 +84,26 @@ public class Settings {
 	public static boolean getGenerateStats() {
 		return generateStats;
 	}
+
+	public static String getAndroidLib() {
+		return androidLib;
+	}
+
+	private enum TargetType {
+		METHODS,
+		NATIVE,
+		REFLECTION
+	}
+
+	static public TargetType Target = TargetType.METHODS;
+	static public Set<String> TargetMethods = new HashSet<String>();
+
+	static public String AppDirectory = null;
+	static public String AppName = null;
+	static public String OutputDirectory = null;
+
+	static public boolean PrintOutput = true;
+	static public boolean PrintConstraints = false;
+	static public boolean GenerateStats = false;
+
 }

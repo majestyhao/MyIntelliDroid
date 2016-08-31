@@ -206,4 +206,24 @@ public class ManifestAnalysis {
         }
 
     }
+
+    public String getAppName() {
+        return applicationName;
+    }
+
+    public List<String> getActivities() {
+        return activities;
+    }
+
+    public List<String> getServices() {
+        return services;
+    }
+
+    public List<String> getBroadcastReceivers() {
+        return broadcastReceivers;
+    }
+
+    public List<String> getContentProviders() {
+        return contentProviders;
+    }
 }

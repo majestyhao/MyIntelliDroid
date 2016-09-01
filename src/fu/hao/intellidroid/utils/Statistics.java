@@ -11,6 +11,7 @@ import java.util.Date;
 public class Statistics {
     private static Date startTime = null;
     private static Date callGraphStartTime = null;
+    private static Date callGraphEndTime = null;
 
     public static void startAnalysis() {
         if (Settings.getGenerateStats()) {
@@ -21,6 +22,12 @@ public class Statistics {
     public static void startCallGraph() {
         if (Settings.getGenerateStats()) {
             callGraphStartTime = new Date();
+        }
+    }
+
+    public static void endCallGraph() {
+        if (Settings.getGenerateStats()) {
+            callGraphEndTime = new Date();
         }
     }
 

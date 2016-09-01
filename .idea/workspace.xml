@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MyIntelliDroid" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b78e0b5e-6174-4048-a69e-17c8bd570da8" name="Default" comment="EntrypointAnalysis">
+    <list default="true" id="b78e0b5e-6174-4048-a69e-17c8bd570da8" name="Default" comment="Generate call graph and extract entry points">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/MyIntelliDroid.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MyIntelliDroid/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.class" afterPath="$PROJECT_DIR$/out/production/MyIntelliDroid/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/UIActivityMapping.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/UIActivityMapping.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Log.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Log.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Settings.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Settings.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/ManifestAnalysis.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/ManifestAnalysis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidClassesAndMethods.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidClassesAndMethods.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java" />
     </list>
     <ignored path="MyIntelliDroid.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +39,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="IntelliDroidAppAnalysis.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IntelliDroidAppAnalysis.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+            <state relative-caret-position="452">
+              <caret line="141" column="40" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,32 +51,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Log.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Log.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Settings.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+            <state relative-caret-position="621">
+              <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
               <folding>
-                <element signature="e#1989#1990#0" expanded="true" />
-                <element signature="e#2011#2012#0" expanded="true" />
-                <element signature="e#2060#2061#0" expanded="true" />
-                <element signature="e#2095#2096#0" expanded="true" />
-                <element signature="e#2140#2141#0" expanded="true" />
-                <element signature="e#2167#2168#0" expanded="true" />
-                <element signature="e#2223#2224#0" expanded="true" />
-                <element signature="e#2262#2263#0" expanded="true" />
-                <element signature="e#2303#2304#0" expanded="true" />
-                <element signature="e#2327#2328#0" expanded="true" />
+                <element signature="e#1404#1405#0" expanded="true" />
+                <element signature="e#1449#1450#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,9 +67,21 @@
       <file leaf-file-name="EntrypointAnalysis.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/EntrypointAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="231" column="40" selection-start-line="231" selection-start-column="40" selection-end-line="231" selection-end-column="40" />
-              <folding />
+            <state relative-caret-position="533">
+              <caret line="275" column="31" selection-start-line="275" selection-start-column="31" selection-end-line="275" selection-end-column="31" />
+              <folding>
+                <element signature="method#convertClassNameToWALA#0;class#EntrypointAnalysis#0" expanded="false" />
+                <element signature="method#getApplicationEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+                <element signature="method#getActivityEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+                <element signature="method#getServiceEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+                <element signature="method#getBroadcastReceiverEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+                <element signature="method#getFragmentEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+                <element signature="method#getComponentEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+                <element signature="e#12588#12589#0" expanded="true" />
+                <element signature="e#12620#12621#0" expanded="true" />
+                <element signature="e#12671#12672#0" expanded="true" />
+                <element signature="e#12709#12710#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,64 +98,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidEntrypoint.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidEntrypoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#450#451#0" expanded="false" />
-                <element signature="e#484#485#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="AndroidClassesAndMethods.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidClassesAndMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2070">
-              <caret line="119" column="40" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
+            <state relative-caret-position="308">
+              <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#4257#4258#0" expanded="false" />
-                <element signature="e#4296#4297#0" expanded="false" />
-                <element signature="e#4350#4351#0" expanded="false" />
-                <element signature="e#4386#4387#0" expanded="false" />
-                <element signature="e#4439#4440#0" expanded="false" />
-                <element signature="e#4474#4475#0" expanded="false" />
-                <element signature="e#4528#4529#0" expanded="false" />
-                <element signature="e#4564#4565#0" expanded="false" />
-                <element signature="e#4618#4619#0" expanded="false" />
-                <element signature="e#4654#4655#0" expanded="false" />
-                <element signature="e#4708#4709#0" expanded="false" />
-                <element signature="e#4744#4745#0" expanded="false" />
-                <element signature="e#4804#4805#0" expanded="false" />
-                <element signature="e#4854#4855#0" expanded="false" />
-                <element signature="e#4918#4919#0" expanded="false" />
-                <element signature="e#4964#4965#0" expanded="false" />
-                <element signature="e#5020#5021#0" expanded="false" />
-                <element signature="e#5056#5057#0" expanded="false" />
-                <element signature="e#5115#5116#0" expanded="false" />
-                <element signature="e#5161#5162#0" expanded="false" />
-                <element signature="e#5220#5221#0" expanded="false" />
-                <element signature="e#5266#5267#0" expanded="false" />
-                <element signature="e#5331#5332#0" expanded="false" />
-                <element signature="e#5378#5379#0" expanded="false" />
+                <element signature="e#5639#5640#0" expanded="true" />
+                <element signature="e#5675#5676#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIActivityMapping.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UIActivityMapping.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/UIActivityMapping.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="93" column="66" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
+            <state relative-caret-position="653">
+              <caret line="94" column="52" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
               <folding>
-                <element signature="e#6405#6406#0" expanded="true" />
-                <element signature="e#6453#6454#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#3796#4032#0" expanded="false" />
+                <element signature="e#4031#4032#0" expanded="false" />
+                <element signature="e#4130#4390#0" expanded="false" />
+                <element signature="e#4389#4390#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -173,6 +141,24 @@
                 <element signature="e#1498#1526#0" expanded="false" />
                 <element signature="e#1586#1587#0" expanded="false" />
                 <element signature="e#1622#1623#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ManifestAnalysis.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/ManifestAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1104">
+              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#8092#8093#0" expanded="false" />
+                <element signature="e#8125#8126#0" expanded="false" />
+                <element signature="e#8166#8167#0" expanded="false" />
+                <element signature="e#8197#8198#0" expanded="false" />
+                <element signature="e#8248#8249#0" expanded="false" />
+                <element signature="e#8289#8290#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -207,20 +193,21 @@
       <list>
         <option value="$PROJECT_DIR$/src/IntelliDroidAppAnalysis.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/IntelliDroidAppAnalysis.java" />
-        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/UIActivityMapping.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/AndroidMethods.java" />
-        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/ManifestAnalysis.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/AndroidClassesAndMethods.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/EntryPointAnalysis.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidEntrypoint.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidAppMethodTargetSelector.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/CallGraphInfoListener.java" />
-        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/EntrypointAnalysis.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Settings.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Log.java" />
-        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java" />
         <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/UIActivityMapping.java" />
+        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/ManifestAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidClassesAndMethods.java" />
+        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java" />
+        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/EntrypointAnalysis.java" />
+        <option value="$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java" />
       </list>
     </option>
   </component>
@@ -228,7 +215,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1176" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -286,7 +273,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -379,29 +367,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyIntelliDroid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MyIntelliDroid" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/com.ibm.wala.shrike-1.3.7-javadoc.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -680,21 +653,28 @@
       <option name="project" value="LOCAL" />
       <updated>1472644260137</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adjust settings to make it runnable">
+      <created>1472691174215</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1472691174215</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292683" sideWeight="0.48333332" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.47291666" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31988743" sideWeight="0.525" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32875264" sideWeight="0.52708334" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31988743" sideWeight="0.475" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35729387" sideWeight="0.5182292" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15572916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -709,7 +689,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32833022" sideWeight="0.49791667" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -726,7 +706,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ManifestAnalysis" />
     <MESSAGE value="EntrypointAnalysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="EntrypointAnalysis" />
+    <MESSAGE value="Adjust settings to make it runnable" />
+    <MESSAGE value="Generate call graph and extract entry points" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generate call graph and extract entry points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -737,16 +719,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/CallGraphInfoListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
@@ -784,18 +756,12 @@
           <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1392#1393#0" expanded="false" />
-            <element signature="e#7867#7868#0" expanded="false" />
-            <element signature="e#7905#7906#0" expanded="false" />
-            <element signature="e#7948#7949#0" expanded="false" />
-            <element signature="e#7981#7982#0" expanded="false" />
-            <element signature="e#8022#8023#0" expanded="false" />
-            <element signature="e#8053#8054#0" expanded="false" />
-            <element signature="e#8104#8105#0" expanded="false" />
-            <element signature="e#8145#8146#0" expanded="false" />
-            <element signature="e#8194#8195#0" expanded="false" />
-            <element signature="e#8233#8234#0" expanded="false" />
+            <element signature="e#8092#8093#0" expanded="false" />
+            <element signature="e#8125#8126#0" expanded="false" />
+            <element signature="e#8166#8167#0" expanded="false" />
+            <element signature="e#8197#8198#0" expanded="false" />
+            <element signature="e#8248#8249#0" expanded="false" />
+            <element signature="e#8289#8290#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -813,16 +779,8 @@
         <state relative-caret-position="826">
           <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
           <folding>
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2060#2061#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2262#2263#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -882,18 +840,12 @@
           <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1392#1393#0" expanded="false" />
-            <element signature="e#7867#7868#0" expanded="false" />
-            <element signature="e#7905#7906#0" expanded="false" />
-            <element signature="e#7948#7949#0" expanded="false" />
-            <element signature="e#7981#7982#0" expanded="false" />
-            <element signature="e#8022#8023#0" expanded="false" />
-            <element signature="e#8053#8054#0" expanded="false" />
-            <element signature="e#8104#8105#0" expanded="false" />
-            <element signature="e#8145#8146#0" expanded="false" />
-            <element signature="e#8194#8195#0" expanded="false" />
-            <element signature="e#8233#8234#0" expanded="false" />
+            <element signature="e#8092#8093#0" expanded="false" />
+            <element signature="e#8125#8126#0" expanded="false" />
+            <element signature="e#8166#8167#0" expanded="false" />
+            <element signature="e#8197#8198#0" expanded="false" />
+            <element signature="e#8248#8249#0" expanded="false" />
+            <element signature="e#8289#8290#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -911,16 +863,8 @@
         <state relative-caret-position="1121">
           <caret line="101" column="40" selection-start-line="101" selection-start-column="40" selection-end-line="101" selection-end-column="40" />
           <folding>
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2060#2061#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2262#2263#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -957,18 +901,12 @@
           <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1392#1393#0" expanded="false" />
-            <element signature="e#7867#7868#0" expanded="false" />
-            <element signature="e#7905#7906#0" expanded="false" />
-            <element signature="e#7948#7949#0" expanded="false" />
-            <element signature="e#7981#7982#0" expanded="false" />
-            <element signature="e#8022#8023#0" expanded="false" />
-            <element signature="e#8053#8054#0" expanded="false" />
-            <element signature="e#8104#8105#0" expanded="false" />
-            <element signature="e#8145#8146#0" expanded="false" />
-            <element signature="e#8194#8195#0" expanded="false" />
-            <element signature="e#8233#8234#0" expanded="false" />
+            <element signature="e#8092#8093#0" expanded="false" />
+            <element signature="e#8125#8126#0" expanded="false" />
+            <element signature="e#8166#8167#0" expanded="false" />
+            <element signature="e#8197#8198#0" expanded="false" />
+            <element signature="e#8248#8249#0" expanded="false" />
+            <element signature="e#8289#8290#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -986,16 +924,8 @@
         <state relative-caret-position="748">
           <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
           <folding>
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2060#2061#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2262#2263#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1024,18 +954,12 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1392#1393#0" expanded="false" />
-            <element signature="e#7867#7868#0" expanded="false" />
-            <element signature="e#7905#7906#0" expanded="false" />
-            <element signature="e#7948#7949#0" expanded="false" />
-            <element signature="e#7981#7982#0" expanded="false" />
-            <element signature="e#8022#8023#0" expanded="false" />
-            <element signature="e#8053#8054#0" expanded="false" />
-            <element signature="e#8104#8105#0" expanded="false" />
-            <element signature="e#8145#8146#0" expanded="false" />
-            <element signature="e#8194#8195#0" expanded="false" />
-            <element signature="e#8233#8234#0" expanded="false" />
+            <element signature="e#8092#8093#0" expanded="false" />
+            <element signature="e#8125#8126#0" expanded="false" />
+            <element signature="e#8166#8167#0" expanded="false" />
+            <element signature="e#8197#8198#0" expanded="false" />
+            <element signature="e#8248#8249#0" expanded="false" />
+            <element signature="e#8289#8290#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,16 +977,8 @@
         <state relative-caret-position="595">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
           <folding>
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2060#2061#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2262#2263#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1098,16 +1014,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2060#2061#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2262#2263#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1147,14 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.6-ANDROID_LISTENER.jar!/com/ibm/wala/ipa/callgraph/propagation/SSAPropagationCallGraphBuilder.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13892">
@@ -1166,62 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="95" column="22" selection-start-line="95" selection-start-column="22" selection-end-line="95" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/ManifestAnalysis.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4669">
-          <caret line="226" column="32" selection-start-line="226" selection-start-column="32" selection-end-line="226" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1358#1359#0" expanded="false" />
-            <element signature="e#1392#1393#0" expanded="false" />
-            <element signature="e#7867#7868#0" expanded="false" />
-            <element signature="e#7905#7906#0" expanded="false" />
-            <element signature="e#7948#7949#0" expanded="false" />
-            <element signature="e#7981#7982#0" expanded="false" />
-            <element signature="e#8022#8023#0" expanded="false" />
-            <element signature="e#8053#8054#0" expanded="false" />
-            <element signature="e#8104#8105#0" expanded="false" />
-            <element signature="e#8145#8146#0" expanded="false" />
-            <element signature="e#8194#8195#0" expanded="false" />
-            <element signature="e#8233#8234#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidClassesAndMethods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="119" column="40" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#4257#4258#0" expanded="false" />
-            <element signature="e#4296#4297#0" expanded="false" />
-            <element signature="e#4350#4351#0" expanded="false" />
-            <element signature="e#4386#4387#0" expanded="false" />
-            <element signature="e#4439#4440#0" expanded="false" />
-            <element signature="e#4474#4475#0" expanded="false" />
-            <element signature="e#4528#4529#0" expanded="false" />
-            <element signature="e#4564#4565#0" expanded="false" />
-            <element signature="e#4618#4619#0" expanded="false" />
-            <element signature="e#4654#4655#0" expanded="false" />
-            <element signature="e#4708#4709#0" expanded="false" />
-            <element signature="e#4744#4745#0" expanded="false" />
-            <element signature="e#4804#4805#0" expanded="false" />
-            <element signature="e#4854#4855#0" expanded="false" />
-            <element signature="e#4918#4919#0" expanded="false" />
-            <element signature="e#4964#4965#0" expanded="false" />
-            <element signature="e#5020#5021#0" expanded="false" />
-            <element signature="e#5056#5057#0" expanded="false" />
-            <element signature="e#5115#5116#0" expanded="false" />
-            <element signature="e#5161#5162#0" expanded="false" />
-            <element signature="e#5220#5221#0" expanded="false" />
-            <element signature="e#5266#5267#0" expanded="false" />
-            <element signature="e#5331#5332#0" expanded="false" />
-            <element signature="e#5378#5379#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1269,11 +1113,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/EntrypointAnalysis.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_75/src.zip!/java/io/FileOutputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="231" column="40" selection-start-line="231" selection-start-column="40" selection-end-line="231" selection-end-column="40" />
+        <state relative-caret-position="577">
+          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Log.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/ManifestAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1104">
+          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#8092#8093#0" expanded="false" />
+            <element signature="e#8125#8126#0" expanded="false" />
+            <element signature="e#8166#8167#0" expanded="false" />
+            <element signature="e#8197#8198#0" expanded="false" />
+            <element signature="e#8248#8249#0" expanded="false" />
+            <element signature="e#8289#8290#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="47" column="43" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
+          <folding>
+            <element signature="e#1404#1405#0" expanded="true" />
+            <element signature="e#1449#1450#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1287,58 +1165,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Settings.java">
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/UIActivityMapping.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="37" column="44" selection-start-line="37" selection-start-column="44" selection-end-line="37" selection-end-column="44" />
+        <state relative-caret-position="653">
+          <caret line="94" column="52" selection-start-line="94" selection-start-column="52" selection-end-line="94" selection-end-column="52" />
           <folding>
-            <element signature="e#1989#1990#0" expanded="true" />
-            <element signature="e#2011#2012#0" expanded="true" />
-            <element signature="e#2060#2061#0" expanded="true" />
-            <element signature="e#2095#2096#0" expanded="true" />
-            <element signature="e#2140#2141#0" expanded="true" />
-            <element signature="e#2167#2168#0" expanded="true" />
-            <element signature="e#2223#2224#0" expanded="true" />
-            <element signature="e#2262#2263#0" expanded="true" />
-            <element signature="e#2303#2304#0" expanded="true" />
-            <element signature="e#2327#2328#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3796#4032#0" expanded="false" />
+            <element signature="e#4031#4032#0" expanded="false" />
+            <element signature="e#4130#4390#0" expanded="false" />
+            <element signature="e#4389#4390#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_75/src.zip!/java/io/FileOutputStream.java">
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/AndroidClassesAndMethods.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="211" column="0" selection-start-line="211" selection-start-column="0" selection-end-line="211" selection-end-column="0" />
+        <state relative-caret-position="308">
+          <caret line="116" column="52" selection-start-line="116" selection-start-column="52" selection-end-line="116" selection-end-column="52" />
+          <folding>
+            <element signature="e#5639#5640#0" expanded="true" />
+            <element signature="e#5675#5676#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.7-sources.jar!/com/ibm/wala/ipa/callgraph/propagation/ClassBasedInstanceKeys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="51" column="37" selection-start-line="51" selection-start-column="37" selection-end-line="51" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Log.java">
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="75" column="32" selection-start-line="75" selection-start-column="32" selection-end-line="75" selection-end-column="32" />
+        <state relative-caret-position="487">
+          <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/EntrypointAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="275" column="31" selection-start-line="275" selection-start-column="31" selection-end-line="275" selection-end-column="31" />
+          <folding>
+            <element signature="method#convertClassNameToWALA#0;class#EntrypointAnalysis#0" expanded="false" />
+            <element signature="method#getApplicationEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+            <element signature="method#getActivityEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+            <element signature="method#getServiceEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+            <element signature="method#getBroadcastReceiverEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+            <element signature="method#getFragmentEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+            <element signature="method#getComponentEntries#0;class#EntrypointAnalysis#0" expanded="false" />
+            <element signature="e#12588#12589#0" expanded="true" />
+            <element signature="e#12620#12621#0" expanded="true" />
+            <element signature="e#12671#12672#0" expanded="true" />
+            <element signature="e#12709#12710#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
-          <caret line="60" column="45" selection-start-line="60" selection-start-column="45" selection-end-line="60" selection-end-column="45" />
+        <state relative-caret-position="452">
+          <caret line="141" column="40" selection-start-line="141" selection-start-column="40" selection-end-line="141" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/UIActivityMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="93" column="66" selection-start-line="93" selection-start-column="66" selection-end-line="93" selection-end-column="66" />
-          <folding>
-            <element signature="e#6405#6406#0" expanded="true" />
-            <element signature="e#6453#6454#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1349,10 +1242,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>MyIntelliDroid</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

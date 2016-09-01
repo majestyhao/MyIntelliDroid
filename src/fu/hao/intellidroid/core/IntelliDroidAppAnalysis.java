@@ -3,6 +3,9 @@ package fu.hao.intellidroid.core;
 import com.ibm.wala.classLoader.JarFileModule;
 import com.ibm.wala.classLoader.Module;
 import com.ibm.wala.ipa.callgraph.AnalysisScope;
+import com.ibm.wala.ipa.callgraph.CallGraph;
+import com.ibm.wala.ipa.callgraph.Entrypoint;
+import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.types.ClassLoaderReference;
@@ -60,7 +63,8 @@ public class IntelliDroidAppAnalysis {
             CommandLine commandLine = commandLineParser.parse(options, args, true);
             if (commandLine.hasOption("h")) {
                 throw new java.text.ParseException("Print help", 0);
-            };
+            }
+            ;
 
             List<String> operands = commandLine.getArgList();
             if (operands.size() != 1) {
@@ -85,7 +89,7 @@ public class IntelliDroidAppAnalysis {
                 e.printStackTrace();
             }
 
-            Log.msg(TAG, "Starting IntelliDroidAppAnalysis for " + (Settings.getAppName() == null ? Settings.getAppDirectory(): Settings.getAppName()));
+            Log.msg(TAG, "Starting IntelliDroidAppAnalysis for " + (Settings.getAppName() == null ? Settings.getAppDirectory() : Settings.getAppName()));
             IntelliDroidAppAnalysis analysis = new IntelliDroidAppAnalysis();
             analysis.analyze();
         } catch (Exception e) {
@@ -131,6 +135,13 @@ public class IntelliDroidAppAnalysis {
         UIActivityMapping uiActivityMapping = new UIActivityMapping(classHierarchy);
 
         // Look for the entry points and generate the call graph
+        EntrypointAnalysis entrypointAnalysis = new EntrypointAnalysis(classHierarchy, manifestAnalysis, uiActivityMapping, callGraphInfoListener);
+
+        Statistics.endCallGraph();
+
+        CallGraph callGraph = entrypointAnalysis.getCallGraph();
+        PointerAnalysis pointerAnalysis = entrypointAnalysis.getPointerAnalysis();
+
 
 
     }

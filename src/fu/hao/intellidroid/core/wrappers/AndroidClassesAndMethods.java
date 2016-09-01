@@ -15,6 +15,7 @@ import java.util.Set;
  */
 public class AndroidClassesAndMethods {
     private static final Set<Selector> applicationLifecycleMethods;
+    private static final Set<Selector> activityLifecycleMethods;
     private static final Set<Selector> serviceLifecycleMethods;
     private static final Selector receiverLifecycleMethod;
     private static final Selector providerLifecycleMethod;
@@ -43,6 +44,15 @@ public class AndroidClassesAndMethods {
         applicationLifecycleMethods.add(Selector.make("onConfigurationChanged(Landroid/content/res/Configuration;)V"));
         applicationLifecycleMethods.add(Selector.make("onLowMemory()V"));
         applicationLifecycleMethods.add(Selector.make("onTrimMemory()V"));
+
+        activityLifecycleMethods = new HashSet<Selector>();
+        activityLifecycleMethods.add(Selector.make("onCreate(Landroid/os/Bundle;)V"));
+        activityLifecycleMethods.add(Selector.make("onStart()V"));
+        activityLifecycleMethods.add(Selector.make("onResume()V"));
+        activityLifecycleMethods.add(Selector.make("onPause()V"));
+        activityLifecycleMethods.add(Selector.make("onStop()V"));
+        activityLifecycleMethods.add(Selector.make("onRestart()V"));
+        activityLifecycleMethods.add(Selector.make("onDestroy()V"));
 
         serviceLifecycleMethods = new HashSet<Selector>();
         serviceLifecycleMethods.add(Selector.make("onCreate()V"));
@@ -118,6 +128,10 @@ public class AndroidClassesAndMethods {
 
     public static Set<Selector> getFragmentLifecycleMethods() {
         return fragmentLifecycleMethods;
+    }
+
+    public static Set<Selector> getActivityLifecycleMethods() {
+        return activityLifecycleMethods;
     }
 
 

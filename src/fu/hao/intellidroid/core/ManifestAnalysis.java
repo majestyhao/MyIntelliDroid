@@ -56,9 +56,12 @@ public class ManifestAnalysis {
 
             Element manifestElement = (Element) manifestXML.getElementsByTagName("manifest").item(0);
             packageName = manifestElement.getAttribute("package");
+            Log.bb(TAG, "pkgName " + packageName);
 
             Element applicationElement = (Element) manifestElement.getElementsByTagName("application").item(0);
+            // TODO Maybe it is a bug
             applicationName = applicationElement.getAttribute("android:name");
+            Log.bb(TAG, "appName " + applicationName);
 
             processActivities(manifestXML);
             processServices(manifestXML);

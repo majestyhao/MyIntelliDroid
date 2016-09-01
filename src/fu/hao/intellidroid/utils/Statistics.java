@@ -12,6 +12,11 @@ public class Statistics {
     private static Date startTime = null;
     private static Date callGraphStartTime = null;
     private static Date callGraphEndTime = null;
+    private static Date constraintStartTime = null;
+    private static Date constraintEndTime = null;
+
+    private static long numberOfNodes = 0;
+    private static long numberOfEdges = 0;
 
     public static void startAnalysis() {
         if (Settings.getGenerateStats()) {
@@ -28,6 +33,26 @@ public class Statistics {
     public static void endCallGraph() {
         if (Settings.getGenerateStats()) {
             callGraphEndTime = new Date();
+        }
+    }
+
+    public static void setNumberOfNodes(long numberOfNodes) {
+        Statistics.numberOfNodes = numberOfNodes;
+    }
+
+    public static void setNumberOfEdges(long numberOfEdges) {
+        Statistics.numberOfEdges = numberOfEdges;
+    }
+
+    public static void startConstraintAnalysis() {
+        if (Settings.getGenerateStats()) {
+            constraintStartTime = new Date();
+        }
+    }
+
+    public static void endConstraintAnalysis() {
+        if (Settings.getGenerateStats()) {
+            constraintEndTime = new Date();
         }
     }
 

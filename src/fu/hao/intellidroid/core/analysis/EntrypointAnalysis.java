@@ -1,8 +1,9 @@
-package fu.hao.intellidroid.core;
+package fu.hao.intellidroid.core.analysis;
 
 import com.ibm.wala.classLoader.IClass;
 import com.ibm.wala.classLoader.IMethod;
 import com.ibm.wala.ipa.callgraph.*;
+import com.ibm.wala.ipa.callgraph.impl.ClassHierarchyClassTargetSelector;
 import com.ibm.wala.ipa.callgraph.impl.ClassHierarchyMethodTargetSelector;
 import com.ibm.wala.ipa.callgraph.impl.DefaultContextSelector;
 import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
@@ -13,10 +14,7 @@ import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.types.MethodReference;
 import com.ibm.wala.types.TypeReference;
-import fu.hao.intellidroid.core.wrappers.AndroidAppMethodTargetSelector;
-import fu.hao.intellidroid.core.wrappers.AndroidClassesAndMethods;
-import fu.hao.intellidroid.core.wrappers.AndroidEntrypoint;
-import fu.hao.intellidroid.core.wrappers.UIActivityMapping;
+import fu.hao.intellidroid.core.wrappers.*;
 import fu.hao.intellidroid.utils.Log;
 
 import java.util.*;
@@ -55,6 +53,7 @@ public class EntrypointAnalysis {
         List<Entrypoint> incrementalEntrypoints = new ArrayList<>();
 
         for (IMethod entrypoint : entrypointFrameworkMethodMap.keySet()) {
+            Log.bb(TAG, "entryPoint: " + entrypoint);
             incrementalEntrypoints.add(new AndroidEntrypoint(entrypoint, classHierarchy));
         }
 
@@ -66,12 +65,19 @@ public class EntrypointAnalysis {
         boolean changed = true;
         while (changed) {
             changed = false;
+            makeCallgraphIncremental(incrementalEntrypoints, classHierarchy.getScope(), classHierarchy);
+            // TODO Incremental searching for the callbacks and expand the callgraph
 
         }
 
+        // TODO Delete overlapping
     }
 
     private String convertClassNameToWALA(String className) {
+        if (className == null || className.isEmpty()) {
+            Log.bb(TAG, "Empty class name " + className);
+            return "";
+        }
         String walaName = "L" + className.replace(".", "/");
         return walaName;
     }
@@ -80,7 +86,8 @@ public class EntrypointAnalysis {
         Map<IMethod, MethodReference> applicationEntries = new HashMap<>();
         String appName = convertClassNameToWALA(manifestAnalysis.getAppName());
 
-        if (!appName.isEmpty()) {
+        if (!(appName != null && appName.isEmpty())) {
+            Log.bb(TAG, "appName: " + appName);
             IClass appClass = classHierarchy.lookupClass(TypeReference.findOrCreate(ClassLoaderReference.Application, appName));
             if (appClass != null) {
                 for (IMethod appMethod : appClass.getDeclaredMethods()) {
@@ -89,10 +96,10 @@ public class EntrypointAnalysis {
                     }
                 }
             } else {
-                Log.err(TAG, "App classes cannot be identified!");
+                Log.warn(TAG, "The Application class cannot be identified!");
             }
         } else {
-            Log.err(TAG, "App name is incorrect!");
+            Log.warn(TAG, "App name is incorrect!");
         }
 
         return applicationEntries;
@@ -108,9 +115,9 @@ public class EntrypointAnalysis {
             IClass activityClass = classHierarchy.lookupClass(TypeReference.findOrCreate(ClassLoaderReference.Application, className));
             if (activityClass != null) {
                 this.activities.add(activityClass.getReference());
-
+                // Justify whether each method is a callback: either an overriden sdk method or defined in Manifest.xml
                 for (IMethod method : activityClass.getDeclaredMethods()) {
-                    if (AndroidClassesAndMethods.getAppLifecycleMethods().contains(method.getSelector())) {
+                    if (AndroidClassesAndMethods.getActivityLifecycleMethods().contains(method.getSelector())) {
                         entries.put(method, MethodReference.findOrCreate(AndroidClassesAndMethods.getActivityClass(), method.getSelector()));
                     } else if (uiDefinedHandlers.contains(method.getSelector().getName().toString())) {
                         entries.put(method, AndroidClassesAndMethods.getOnClickMethod());
@@ -194,7 +201,7 @@ public class EntrypointAnalysis {
 
     private Map<IMethod, MethodReference> getFragmentEntries() {
         Map<IMethod, MethodReference> fragmentEntrypoints = new HashMap<IMethod, MethodReference>();
-
+        // FIXME A bug?
         Collection<IClass> fragmentClasses = classHierarchy.computeSubClasses(TypeReference.findOrCreate(ClassLoaderReference.Extension, "Landroid/app/Fragment"));
 
         for (IClass fragmentClass : fragmentClasses) {
@@ -224,15 +231,23 @@ public class EntrypointAnalysis {
         componentEntries.putAll(getServiceEntries());
         componentEntries.putAll(getBroadcastReceiverEntries());
         componentEntries.putAll(getContentProviderEntries());
-        componentEntries.putAll(getFragmentEntries());
+        // componentEntries.putAll(getFragmentEntries());
 
         return componentEntries;
     }
-
+    
+    
+    /**
+     * Method: makeCallgraphIncremental(
+     * Description: Subroutine of incrementally create the call graph
+     * Authors：Hao Fu(haofu@ucdavis.edu)
+     * Date: 2016/8/31 19:33
+     */
     private void makeCallgraphIncremental(Iterable<Entrypoint> entrypoints, AnalysisScope scope, IClassHierarchy classHierarchy) {
         AnalysisOptions options = new AnalysisOptions(scope, entrypoints);
+
         options.setSelector(new AndroidAppMethodTargetSelector(new ClassHierarchyMethodTargetSelector(classHierarchy), classHierarchy, manifestAnalysis));
-        options.setSelector(new ClassHierarchyMethodTargetSelector(classHierarchy));
+        options.setSelector(new ClassHierarchyClassTargetSelector(classHierarchy));
 
         // 0-1-CFA Call graph builder
         callGraphBuilder = ZeroXCFABuilder.make(classHierarchy, options, new AnalysisCache(), new DefaultContextSelector(options, classHierarchy), null, ZeroXInstanceKeys.NONE);
@@ -244,8 +259,17 @@ public class EntrypointAnalysis {
             pointerAnalysis = callGraphBuilder.getPointerAnalysis();
             Log.debug(TAG, "< Call graph created >");
         } catch (Exception e) {
+            e.printStackTrace();
             Log.err(TAG, e.getMessage());
         }
 
+    }
+
+    public CallGraph getCallGraph() {
+        return callGraph;
+    }
+
+    public PointerAnalysis getPointerAnalysis() {
+        return pointerAnalysis;
     }
 }

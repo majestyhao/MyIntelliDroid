@@ -8,7 +8,7 @@ import com.ibm.wala.ipa.callgraph.MethodTargetSelector;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.types.TypeReference;
-import fu.hao.intellidroid.core.ManifestAnalysis;
+import fu.hao.intellidroid.core.analysis.ManifestAnalysis;
 
 /**
  * Description: represents policies for selecting a method to call at a given invocation site.

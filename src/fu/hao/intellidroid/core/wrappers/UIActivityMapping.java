@@ -1,8 +1,7 @@
 package fu.hao.intellidroid.core.wrappers;
 
-import com.ibm.wala.classLoader.IClass;
+import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
-import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.types.TypeReference;
 import fu.hao.intellidroid.utils.Log;
 import fu.hao.intellidroid.utils.Settings;
@@ -33,6 +32,8 @@ public class UIActivityMapping {
     private Map<String, Set<String>> handlerLayoutMap = new HashMap<>();
     private Map<String, Set<TypeReference>> handlerActivityMap = new HashMap<>();
 
+    private CallGraphInfoListener callGraphInfoListener;
+    private PointerAnalysis pointerAnalysis;
 
     public UIActivityMapping(IClassHierarchy classHierarchy) {
         Log.debug(TAG, "=================================================");
@@ -167,5 +168,10 @@ public class UIActivityMapping {
 
     public Set<String> getUILayoutDefinedHandlers() {
         return handlerLayoutMap.keySet();
+    }
+
+    public void setCallGraph(CallGraphInfoListener callGraphInfoListener, PointerAnalysis pointerAnalysis) {
+        this.callGraphInfoListener = callGraphInfoListener;
+        this.pointerAnalysis = pointerAnalysis;
     }
 }

@@ -1,4 +1,4 @@
-package fu.hao.intellidroid.core;
+package fu.hao.intellidroid.core.analysis;
 
 import fu.hao.intellidroid.utils.Log;
 import org.w3c.dom.Document;

@@ -4,12 +4,15 @@ import com.ibm.wala.classLoader.JarFileModule;
 import com.ibm.wala.classLoader.Module;
 import com.ibm.wala.ipa.callgraph.AnalysisScope;
 import com.ibm.wala.ipa.callgraph.CallGraph;
-import com.ibm.wala.ipa.callgraph.Entrypoint;
 import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
 import com.ibm.wala.ipa.cha.ClassHierarchy;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.util.config.AnalysisScopeReader;
+import com.ibm.wala.util.graph.GraphUtil;
+import fu.hao.intellidroid.core.analysis.EntrypointAnalysis;
+import fu.hao.intellidroid.core.analysis.ManifestAnalysis;
+import fu.hao.intellidroid.core.wrappers.CallGraphInfoListener;
 import fu.hao.intellidroid.core.wrappers.UIActivityMapping;
 import fu.hao.intellidroid.utils.Log;
 import fu.hao.intellidroid.utils.Settings;
@@ -142,8 +145,18 @@ public class IntelliDroidAppAnalysis {
         CallGraph callGraph = entrypointAnalysis.getCallGraph();
         PointerAnalysis pointerAnalysis = entrypointAnalysis.getPointerAnalysis();
 
+        Statistics.setNumberOfNodes(callGraph.getNumberOfNodes());
+        Statistics.setNumberOfEdges(GraphUtil.countEdges(callGraph));
+
+        uiActivityMapping.setCallGraph(callGraphInfoListener, pointerAnalysis);
+
+        /* Analyze paths that lead to invocations of targeted methods */
+        Statistics.startConstraintAnalysis();
 
 
+
+
+        Statistics.endConstraintAnalysis();
     }
 
 }

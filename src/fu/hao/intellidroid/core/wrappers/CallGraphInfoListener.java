@@ -1,4 +1,4 @@
-package fu.hao.intellidroid.core;
+package fu.hao.intellidroid.core.wrappers;
 
 import com.ibm.wala.classLoader.IField;
 import com.ibm.wala.ipa.callgraph.CGNode;

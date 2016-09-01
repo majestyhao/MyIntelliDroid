@@ -49,7 +49,7 @@ public class UIActivityMapping {
     private Map<Integer, String> getLayoutIDs() {
         Map<Integer, String> idLayoutMap = new HashMap<>();
         try {
-            File resourceFile = new File(Settings.getAppDirectory() + "/apk/res/values/public.xml");
+            File resourceFile = new File(Settings.getAppDirectory() + "/res/values/public.xml");
             if (!resourceFile.exists()) {
                 Log.warn(TAG, "Resource file not found!");
                 return null;
@@ -91,7 +91,7 @@ public class UIActivityMapping {
     }
 
     private void getLayoutHandlers() throws Exception {
-        File resourceDir = new File(Settings.getAppDirectory() + "/apk/res/");
+        File resourceDir = new File(Settings.getAppDirectory() + "/res/");
         if (!resourceDir.exists() || !resourceDir.isDirectory()) {
             Log.warn(TAG, "Cannot find the res file!");
             return;

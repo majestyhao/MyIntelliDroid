@@ -54,14 +54,16 @@ public class Log {
 	static String fileName;
 	
 	public static void updateFileName() {
-		File file = new File(Settings.getOutputDirectory());
-		if (!file.exists() || !file.isDirectory()) {
-			file.mkdir();
-		}
-		fileName = Settings.getOutputDirectory() + File.separator + Settings.getAppName() + ".log";
-		file = new File(fileName);
-		if (file.exists()) {
-			file.delete();
+		if (Settings.getOutputDirectory() != null) {
+			File file = new File(Settings.getOutputDirectory());
+			if (!file.exists() || !file.isDirectory()) {
+				file.mkdir();
+			}
+			fileName = Settings.getOutputDirectory() + File.separator + Settings.getAppName() + ".log";
+			file = new File(fileName);
+			if (file.exists()) {
+				file.delete();
+			}
 		}
 	}
 
@@ -71,7 +73,7 @@ public class Log {
 			updateFileName();
 		}
 		
-		if (theLevel >= Settings.getLogLevel()) {
+		if (fileName != null && theLevel >= Settings.getLogLevel()) {
 			Writer output;
 			output = new BufferedWriter(new FileWriter(fileName, true));
 			output.append(TAG + " - " + "[" + title + "]: " + msg + "\n");

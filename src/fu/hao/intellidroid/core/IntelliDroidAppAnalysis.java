@@ -29,6 +29,8 @@ public class IntelliDroidAppAnalysis {
     private final static String TAG = IntelliDroidAppAnalysis.class.getSimpleName();
 
     public static void main(String[] args) {
+        Settings.setLogLevel(Log.MODE_VERBOSE);
+
         Options options = new Options();
 
         options.addOption(
@@ -45,6 +47,13 @@ public class IntelliDroidAppAnalysis {
                         .build()
         );
 
+        options.addOption(
+                Option.builder("l").longOpt("lib")
+                        .required(false).hasArg(true)
+                        .desc("Android SDK android.jar location")
+                        .build()
+        );
+
         CommandLineParser commandLineParser = new DefaultParser();
 
         try {
@@ -55,12 +64,15 @@ public class IntelliDroidAppAnalysis {
 
             List<String> operands = commandLine.getArgList();
             if (operands.size() != 1) {
-                throw new ParseException("Missing target apk directory");
+                Log.err(TAG, "Missing target apk directory: " + operands.size());
             }
 
             Settings.setAppDirectory(operands.get(0));
             Settings.setAppName(commandLine.getOptionValue("n", null));
-            Settings.setOutputDirectory(commandLine.getOptionValue("o", "./pathOutput"));
+            Settings.setAndroidLib(commandLine.getOptionValue("l", "./android/android-4.3/android.jar"));
+            Settings.setOutputDirectory(commandLine.getOptionValue("o", Settings.getAppDirectory() + "/Output"));
+            Log.bb(TAG, Settings.getAndroidLib());
+            Log.bb(TAG, Settings.getOutputDirectory());
 
             // Clean output directory
             try {
@@ -73,7 +85,7 @@ public class IntelliDroidAppAnalysis {
                 e.printStackTrace();
             }
 
-            Log.msg(TAG, "Starting fu.hao.intellidroid.IntelliDroidAppAnalysis for " + (Settings.getAppName() == null ? Settings.getAppDirectory(): Settings.getAppName()));
+            Log.msg(TAG, "Starting IntelliDroidAppAnalysis for " + (Settings.getAppName() == null ? Settings.getAppDirectory(): Settings.getAppName()));
             IntelliDroidAppAnalysis analysis = new IntelliDroidAppAnalysis();
             analysis.analyze();
         } catch (Exception e) {
@@ -88,11 +100,13 @@ public class IntelliDroidAppAnalysis {
         String appPath = null;
         String manifestPath = null;
 
-        String extractedApkPath = Settings.getAppDirectory() + "/apk";
+        String extractedApkPath = Settings.getAppDirectory(); // + "/apk";
         File extractedApkDir = new File(extractedApkPath);
 
+        Log.bb(TAG, extractedApkDir);
+
         if (extractedApkDir.isDirectory()) {
-            appPath = extractedApkPath + "/classes.jar";
+            appPath = extractedApkPath + "/classes-dex2jar.jar";
             manifestPath = extractedApkPath + "/AndroidManifest.xml";
         } else {
             Log.err(TAG, "Missing AndroidManifest.xml and/or classes.jar files in target APK directory.");

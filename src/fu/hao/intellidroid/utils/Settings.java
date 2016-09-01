@@ -35,7 +35,7 @@ public class Settings {
 	private static String appDirectory = null;
 	private static String appName = null;
 	private static String outputDirectory = null;
-	private static final String androidLib = "./android/android-4.3/android.jar";
+	private static String androidLib = null;
 
 	private static boolean printOutput = true;
 	private static boolean printConstraints = false;
@@ -83,6 +83,10 @@ public class Settings {
 
 	public static boolean getGenerateStats() {
 		return generateStats;
+	}
+
+	public static void setAndroidLib(String androidLib) {
+		Settings.androidLib = androidLib;
 	}
 
 	public static String getAndroidLib() {

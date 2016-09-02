@@ -1,5 +1,6 @@
 package fu.hao.intellidroid.core.analysis;
 
+import com.ibm.wala.classLoader.IMethod;
 import com.ibm.wala.ipa.callgraph.CallGraph;
 import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
 import fu.hao.intellidroid.core.wrappers.CallGraphInfoListener;
@@ -10,6 +11,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonPrimitive;
+
+import java.util.Collection;
 
 
 /**
@@ -38,6 +41,8 @@ public class TargetedPathsAnalysis {
 
     public void analyze() {
         JsonObject targetedPathsJson = new JsonObject();
+
+        Collection<IMethod> entrypoints = entrypointAnalysis.getTrueEntrypoints();
     }
 
 }

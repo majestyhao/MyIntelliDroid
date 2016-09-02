@@ -33,6 +33,7 @@ public class EntrypointAnalysis {
     private final CallGraphInfoListener callGraphInfoListener;
 
     private Map<IMethod, MethodReference> entrypointFrameworkMethodMap = new HashMap<>();
+    private List<IMethod> trueEntrypoints = new ArrayList<>();
 
     private SSAPropagationCallGraphBuilder callGraphBuilder = null;
     private CallGraph callGraph = null;
@@ -71,6 +72,39 @@ public class EntrypointAnalysis {
         }
 
         // TODO Delete overlapping
+        // Get the true entrypoints (i.e. those aren't part of another entrypoint's path)
+        for (IMethod entrypoint : entrypointFrameworkMethodMap.keySet()) {
+            Set<CGNode> entrypointNodes = callGraph.getNodes(entrypoint.getReference());
+            if (entrypointNodes.isEmpty()) {
+                continue;
+            }
+
+            for (CGNode entrypointNode : entrypointNodes) {
+                boolean embedded = false;
+                Iterator<CGNode> predNodesIter = callGraph.getPredNodes(entrypointNode);
+                while (predNodesIter.hasNext()) {
+                    CGNode predNode = predNodesIter.next();
+                    // If the entrypoint has pred that is not the root => not a true entrypoint
+                    if (!predNode.equals(callGraph.getFakeRootNode())) {
+                        embedded = true;
+                    }
+                }
+
+                if (embedded) {
+                    Log.debug(TAG, "Embedded entrypoint: " + entrypoint.getSignature());
+                } else {
+                    trueEntrypoints.add(entrypoint);
+                }
+
+                break;
+            }
+
+            Log.debug(TAG, "===================================");
+            for (IMethod entrypointHere : entrypointFrameworkMethodMap.keySet()) {
+                Log.debug(TAG, "Map: " + entrypointHere + " --> " + entrypointFrameworkMethodMap.get(entrypointHere).getSignature());
+            }
+            Log.debug(TAG, "===================================");
+        }
     }
 
     private String convertClassNameToWALA(String className) {
@@ -272,4 +306,10 @@ public class EntrypointAnalysis {
     public PointerAnalysis getPointerAnalysis() {
         return pointerAnalysis;
     }
+
+    public List<IMethod> getTrueEntrypoints() {
+        return trueEntrypoints;
+    }
+
+
 }

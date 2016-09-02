@@ -12,8 +12,9 @@ import com.ibm.wala.util.config.AnalysisScopeReader;
 import com.ibm.wala.util.graph.GraphUtil;
 import fu.hao.intellidroid.core.analysis.EntrypointAnalysis;
 import fu.hao.intellidroid.core.analysis.ManifestAnalysis;
+import fu.hao.intellidroid.core.analysis.TargetedPathsAnalysis;
 import fu.hao.intellidroid.core.wrappers.CallGraphInfoListener;
-import fu.hao.intellidroid.core.wrappers.UIActivityMapping;
+import fu.hao.intellidroid.core.analysis.UIActivityMapping;
 import fu.hao.intellidroid.utils.Log;
 import fu.hao.intellidroid.utils.Settings;
 import fu.hao.intellidroid.utils.Statistics;
@@ -70,6 +71,7 @@ public class IntelliDroidAppAnalysis {
             ;
 
             List<String> operands = commandLine.getArgList();
+            System.out.print("operands size: " + operands.size());
             if (operands.size() != 1) {
                 Log.err(TAG, "Missing target apk directory: " + operands.size());
             }
@@ -152,7 +154,12 @@ public class IntelliDroidAppAnalysis {
 
         /* Analyze paths that lead to invocations of targeted methods */
         Statistics.startConstraintAnalysis();
-
+        TargetedPathsAnalysis targetedPathsAnalysis = new TargetedPathsAnalysis(
+                entrypointAnalysis,
+                manifestAnalysis,
+                uiActivityMapping,
+                callGraphInfoListener
+        );
 
 
 

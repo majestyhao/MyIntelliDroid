@@ -19,6 +19,9 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="MyIntelliDroidAppAnalysis_main" target="1.7" />
+      <module name="MyIntelliDroidAppAnalysis_test" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

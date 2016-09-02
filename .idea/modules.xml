@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MyIntelliDroid.iml" filepath="$PROJECT_DIR$/MyIntelliDroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MyIntelliDroidAppAnalysis.iml" filepath="$PROJECT_DIR$/.idea/modules/MyIntelliDroidAppAnalysis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MyIntelliDroidAppAnalysis_main.iml" filepath="$PROJECT_DIR$/.idea/modules/MyIntelliDroidAppAnalysis_main.iml" group="MyIntelliDroidAppAnalysis" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MyIntelliDroidAppAnalysis_test.iml" filepath="$PROJECT_DIR$/.idea/modules/MyIntelliDroidAppAnalysis_test.iml" group="MyIntelliDroidAppAnalysis" />
     </modules>
   </component>
 </project>

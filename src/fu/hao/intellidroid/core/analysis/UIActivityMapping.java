@@ -1,8 +1,9 @@
-package fu.hao.intellidroid.core.wrappers;
+package fu.hao.intellidroid.core.analysis;
 
 import com.ibm.wala.ipa.callgraph.propagation.PointerAnalysis;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.types.TypeReference;
+import fu.hao.intellidroid.core.wrappers.CallGraphInfoListener;
 import fu.hao.intellidroid.utils.Log;
 import fu.hao.intellidroid.utils.Settings;
 import org.apache.commons.io.FilenameUtils;

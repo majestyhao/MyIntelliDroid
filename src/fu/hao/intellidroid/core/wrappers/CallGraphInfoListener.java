@@ -1,14 +1,20 @@
 package fu.hao.intellidroid.core.wrappers;
 
 import com.ibm.wala.classLoader.IField;
+import com.ibm.wala.classLoader.IMethod;
 import com.ibm.wala.ipa.callgraph.CGNode;
 import com.ibm.wala.ipa.callgraph.propagation.PointerKey;
 import com.ibm.wala.ipa.callgraph.propagation.SSAPropagationCallGraphBuilder;
 import com.ibm.wala.ipa.cha.IClassHierarchy;
 import com.ibm.wala.ssa.SSAAbstractInvokeInstruction;
+import com.ibm.wala.types.ClassLoaderReference;
 import com.ibm.wala.types.TypeReference;
+import fu.hao.intellidroid.core.IntelliDroidAppAnalysis;
+import fu.hao.intellidroid.utils.Log;
+import fu.hao.intellidroid.utils.Settings;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -21,6 +27,8 @@ import java.util.Set;
  * Date: 2016/8/29
  */
 public class CallGraphInfoListener implements SSAPropagationCallGraphBuilder.BuilderListener {
+    private final String TAG = this.getClass().getSimpleName();
+
     private IClassHierarchy classHierarchy;
     private Map<String, Set<CGNode>> targetMethodInvokes = new HashMap<String, Set<CGNode>>();
     private Map<PointerKey, Set<CGNode>> heapStores = new HashMap<PointerKey, Set<CGNode>>();
@@ -35,12 +43,39 @@ public class CallGraphInfoListener implements SSAPropagationCallGraphBuilder.Bui
 
     @Override
     public void onPut(CGNode cgNode, IField iField, PointerKey[] pointerKeys) {
-
     }
 
+    /**
+     * Method: onInvoke
+     * Description: When encounter a method invocation -- Visitor model
+     * Authors：Hao Fu(haofu@ucdavis.edu)
+     * Date: 2016/9/1 20:17
+     */
     @Override
     public void onInvoke(CGNode node, SSAAbstractInvokeInstruction invokeInstr) {
+        // If it is not an app method
+        if (!node.getMethod().getDeclaringClass().getClassLoader().getReference().equals(ClassLoaderReference.Application)) {
+            return;
+        }
 
+        // Get the invoked method
+        IMethod targetMethod = classHierarchy.resolveMethod(invokeInstr.getDeclaredTarget());
+        if (targetMethod == null) {
+            return;
+        }
+
+        String targetMethodSignature = targetMethod.getSignature();
+        Log.bb(TAG, targetMethodSignature);
+
+        // If it is the sensitive target method
+        if (Settings.getTargetMethods().contains(targetMethodSignature)) {
+            if (!targetMethodInvokes.containsKey(targetMethodSignature)) {
+                targetMethodInvokes.put(targetMethodSignature, new HashSet<CGNode>());
+            }
+
+            targetMethodInvokes.get(targetMethodSignature).add(node);
+        }
+        // TODO If it is a sharedPrefMethod
     }
 
     public void clear() {
@@ -49,5 +84,13 @@ public class CallGraphInfoListener implements SSAPropagationCallGraphBuilder.Bui
         sharedPrefStores.clear();
         sharedPrefUIStores.clear();
         callbackRegistrations.clear();
+    }
+
+    public Set<String> getTargetMethods() {
+        return targetMethodInvokes.keySet();
+    }
+
+    public Set<CGNode> getTargetNodes(String method) {
+        return targetMethodInvokes.get(method);
     }
 }

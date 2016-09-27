@@ -32,4 +32,16 @@ public class CallPath {
         callNodes = new HashSet<>();
         callNodes.addAll(callPath);
     }
+
+    public CallGraph getCallGraph() {
+        return callGraph;
+    }
+
+    public List<CGNode> getPath() {
+        return callPath;
+    }
+
+    public int getTargetIndex() {
+        return targetIndex;
+    }
 }

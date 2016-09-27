@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20c4865f-3c6b-4ab3-acfc-857f0f6cc2b0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.7-javadoc.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.7-sources.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/com.ibm.wala.shrike-1.3.7-javadoc.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/com.ibm.wala.shrike-1.3.7-sources.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/libs/com.ibm.wala.util-1.3.7-javadoc.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/AndroidAppDFSPathFinder.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/AndroidAppDFSPathFinder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/TargetedPathsAnalysis.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/TargetedPathsAnalysis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallPath.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallPath.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java" afterPath="$PROJECT_DIR$/src/fu/hao/intellidroid/utils/Statistics.java" />
     </list>
     <ignored path="MyIntelliDroidAppAnalysis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,25 +44,29 @@
       <file leaf-file-name="IntelliDroidAppAnalysis.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="3289">
               <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TargetedPathsAnalysis.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TargetedPathsAnalysis.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/TargetedPathsAnalysis.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="747">
-              <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2331#2618#0" expanded="true" />
-                <element signature="e#2617#2618#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="214">
+              <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstraintAnalysis.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/ConstraintAnalysis.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-138">
+              <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/AndroidAppDFSPathFinder.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -83,8 +86,8 @@
       <file leaf-file-name="CallPath.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallPath.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+            <state relative-caret-position="851">
+              <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -95,9 +98,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="6624">
               <caret line="310" column="31" selection-start-line="310" selection-start-column="31" selection-end-line="310" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -107,11 +108,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1656">
               <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1913#1914#0" expanded="false" />
-                <element signature="e#1949#1950#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,70 +118,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="21275">
               <caret line="1028" column="4" selection-start-line="1028" selection-start-column="4" selection-end-line="1028" selection-end-column="4" />
-              <folding>
-                <element signature="n#!!doc" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#6790#6791#0" expanded="false" />
-                <element signature="e#6854#6855#0" expanded="false" />
-                <element signature="e#9139#9140#0" expanded="false" />
-                <element signature="e#9189#9190#0" expanded="false" />
-                <element signature="e#20746#20747#0" expanded="false" />
-                <element signature="e#20774#20775#0" expanded="false" />
-                <element signature="e#20820#20821#0" expanded="false" />
-                <element signature="e#20856#20857#0" expanded="false" />
-                <element signature="e#20906#20907#0" expanded="false" />
-                <element signature="e#20953#20954#0" expanded="false" />
-                <element signature="e#21354#21355#0" expanded="false" />
-                <element signature="e#21421#21422#0" expanded="false" />
-                <element signature="e#21628#21629#0" expanded="false" />
-                <element signature="e#21692#21693#0" expanded="false" />
-                <element signature="e#23873#23874#0" expanded="false" />
-                <element signature="e#23926#23927#0" expanded="false" />
-                <element signature="e#23980#23981#0" expanded="false" />
-                <element signature="e#24048#24049#0" expanded="false" />
-                <element signature="e#24098#24099#0" expanded="false" />
-                <element signature="e#24149#24150#0" expanded="false" />
-                <element signature="e#40692#40693#0" expanded="false" />
-                <element signature="e#40750#40751#0" expanded="false" />
-                <element signature="e#51991#51992#0" expanded="false" />
-                <element signature="e#52022#52023#0" expanded="false" />
-                <element signature="e#52151#52152#0" expanded="false" />
-                <element signature="e#52183#52184#0" expanded="false" />
-                <element signature="e#70419#70420#0" expanded="false" />
-                <element signature="e#70482#70483#0" expanded="false" />
-                <element signature="e#71756#71757#0" expanded="false" />
-                <element signature="e#71781#71782#0" expanded="false" />
-                <element signature="e#75541#75542#0" expanded="false" />
-                <element signature="e#75584#75585#0" expanded="false" />
-                <element signature="e#75809#75810#0" expanded="false" />
-                <element signature="e#75835#75836#0" expanded="false" />
-                <element signature="e#76394#76395#0" expanded="false" />
-                <element signature="e#76420#76421#0" expanded="false" />
-                <element signature="e#76746#76747#0" expanded="false" />
-                <element signature="e#76772#76773#0" expanded="false" />
-                <element signature="e#76851#76852#0" expanded="false" />
-                <element signature="e#76877#76878#0" expanded="false" />
-                <element signature="e#76950#76951#0" expanded="false" />
-                <element signature="e#76976#76977#0" expanded="false" />
-                <element signature="e#77047#77048#0" expanded="false" />
-                <element signature="e#77073#77074#0" expanded="false" />
-                <element signature="e#77375#77376#0" expanded="false" />
-                <element signature="e#77401#77402#0" expanded="false" />
-                <element signature="e#77478#77479#0" expanded="false" />
-                <element signature="e#77504#77505#0" expanded="false" />
-                <element signature="e#78708#78709#0" expanded="false" />
-                <element signature="e#78769#78770#0" expanded="false" />
-                <element signature="e#84883#84884#0" expanded="false" />
-                <element signature="e#84940#84941#0" expanded="false" />
-                <element signature="e#85005#85006#0" expanded="false" />
-                <element signature="e#85052#85053#0" expanded="false" />
-                <element signature="e#85420#85421#0" expanded="false" />
-                <element signature="e#85478#85479#0" expanded="false" />
-                <element signature="e#85551#85552#0" expanded="false" />
-                <element signature="e#85605#85606#0" expanded="false" />
-                <element signature="e#85766#85767#0" expanded="false" />
-                <element signature="e#85810#85811#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -470,7 +404,7 @@
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
-    <option name="height" value="1176" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -497,7 +431,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -625,11 +559,11 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/com.ibm.wala.shrike.jar!/" />
@@ -898,11 +832,18 @@
       <option name="project" value="LOCAL" />
       <updated>1472876640947</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="javadocs">
+      <created>1472889330994</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1472889330994</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -913,7 +854,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1640625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -945,7 +886,8 @@
     <MESSAGE value="Rebuild through Gradle" />
     <MESSAGE value="Get true entrypoints" />
     <MESSAGE value="call path" />
-    <option name="LAST_COMMIT_MESSAGE" value="call path" />
+    <MESSAGE value="javadocs" />
+    <option name="LAST_COMMIT_MESSAGE" value="javadocs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -962,9 +904,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3289">
           <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -972,10 +912,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/AndroidAppDFSPathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2331#2618#0" expanded="true" />
-            <element signature="e#2617#2618#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -992,9 +938,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6624">
           <caret line="310" column="31" selection-start-line="310" selection-start-column="31" selection-end-line="310" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1002,11 +946,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1656">
           <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1913#1914#0" expanded="false" />
-            <element signature="e#1949#1950#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,70 +954,129 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21275">
           <caret line="1028" column="4" selection-start-line="1028" selection-start-column="4" selection-end-line="1028" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.6-ANDROID_LISTENER.jar!/com/ibm/wala/ipa/callgraph/propagation/SSAPropagationCallGraphBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25783">
+          <caret line="1250" column="67" selection-start-line="1250" selection-start-column="67" selection-end-line="1250" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3289">
+          <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/TargetedPathsAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/AndroidAppDFSPathFinder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6790#6791#0" expanded="false" />
-            <element signature="e#6854#6855#0" expanded="false" />
-            <element signature="e#9139#9140#0" expanded="false" />
-            <element signature="e#9189#9190#0" expanded="false" />
-            <element signature="e#20746#20747#0" expanded="false" />
-            <element signature="e#20774#20775#0" expanded="false" />
-            <element signature="e#20820#20821#0" expanded="false" />
-            <element signature="e#20856#20857#0" expanded="false" />
-            <element signature="e#20906#20907#0" expanded="false" />
-            <element signature="e#20953#20954#0" expanded="false" />
-            <element signature="e#21354#21355#0" expanded="false" />
-            <element signature="e#21421#21422#0" expanded="false" />
-            <element signature="e#21628#21629#0" expanded="false" />
-            <element signature="e#21692#21693#0" expanded="false" />
-            <element signature="e#23873#23874#0" expanded="false" />
-            <element signature="e#23926#23927#0" expanded="false" />
-            <element signature="e#23980#23981#0" expanded="false" />
-            <element signature="e#24048#24049#0" expanded="false" />
-            <element signature="e#24098#24099#0" expanded="false" />
-            <element signature="e#24149#24150#0" expanded="false" />
-            <element signature="e#40692#40693#0" expanded="false" />
-            <element signature="e#40750#40751#0" expanded="false" />
-            <element signature="e#51991#51992#0" expanded="false" />
-            <element signature="e#52022#52023#0" expanded="false" />
-            <element signature="e#52151#52152#0" expanded="false" />
-            <element signature="e#52183#52184#0" expanded="false" />
-            <element signature="e#70419#70420#0" expanded="false" />
-            <element signature="e#70482#70483#0" expanded="false" />
-            <element signature="e#71756#71757#0" expanded="false" />
-            <element signature="e#71781#71782#0" expanded="false" />
-            <element signature="e#75541#75542#0" expanded="false" />
-            <element signature="e#75584#75585#0" expanded="false" />
-            <element signature="e#75809#75810#0" expanded="false" />
-            <element signature="e#75835#75836#0" expanded="false" />
-            <element signature="e#76394#76395#0" expanded="false" />
-            <element signature="e#76420#76421#0" expanded="false" />
-            <element signature="e#76746#76747#0" expanded="false" />
-            <element signature="e#76772#76773#0" expanded="false" />
-            <element signature="e#76851#76852#0" expanded="false" />
-            <element signature="e#76877#76878#0" expanded="false" />
-            <element signature="e#76950#76951#0" expanded="false" />
-            <element signature="e#76976#76977#0" expanded="false" />
-            <element signature="e#77047#77048#0" expanded="false" />
-            <element signature="e#77073#77074#0" expanded="false" />
-            <element signature="e#77375#77376#0" expanded="false" />
-            <element signature="e#77401#77402#0" expanded="false" />
-            <element signature="e#77478#77479#0" expanded="false" />
-            <element signature="e#77504#77505#0" expanded="false" />
-            <element signature="e#78708#78709#0" expanded="false" />
-            <element signature="e#78769#78770#0" expanded="false" />
-            <element signature="e#84883#84884#0" expanded="false" />
-            <element signature="e#84940#84941#0" expanded="false" />
-            <element signature="e#85005#85006#0" expanded="false" />
-            <element signature="e#85052#85053#0" expanded="false" />
-            <element signature="e#85420#85421#0" expanded="false" />
-            <element signature="e#85478#85479#0" expanded="false" />
-            <element signature="e#85551#85552#0" expanded="false" />
-            <element signature="e#85605#85606#0" expanded="false" />
-            <element signature="e#85766#85767#0" expanded="false" />
-            <element signature="e#85810#85811#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/EntrypointAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6624">
+          <caret line="310" column="31" selection-start-line="310" selection-start-column="31" selection-end-line="310" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallGraphInfoListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.7-sources.jar!/com/ibm/wala/ipa/callgraph/propagation/SSAPropagationCallGraphBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21275">
+          <caret line="1028" column="4" selection-start-line="1028" selection-start-column="4" selection-end-line="1028" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.6-ANDROID_LISTENER.jar!/com/ibm/wala/ipa/callgraph/propagation/SSAPropagationCallGraphBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25783">
+          <caret line="1250" column="67" selection-start-line="1250" selection-start-column="67" selection-end-line="1250" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3289">
+          <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/TargetedPathsAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallPath.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/EntrypointAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6624">
+          <caret line="310" column="31" selection-start-line="310" selection-start-column="31" selection-end-line="310" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallGraphInfoListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1656">
+          <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/libs/com.ibm.wala.core-1.3.7-sources.jar!/com/ibm/wala/ipa/callgraph/propagation/SSAPropagationCallGraphBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21275">
+          <caret line="1028" column="4" selection-start-line="1028" selection-start-column="4" selection-end-line="1028" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1120,11 +1119,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/IntelliDroidAppAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="3289">
           <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1139,9 +1136,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6624">
           <caret line="310" column="31" selection-start-line="310" selection-start-column="31" selection-end-line="310" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,77 +1152,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21275">
           <caret line="1028" column="4" selection-start-line="1028" selection-start-column="4" selection-end-line="1028" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6790#6791#0" expanded="false" />
-            <element signature="e#6854#6855#0" expanded="false" />
-            <element signature="e#9139#9140#0" expanded="false" />
-            <element signature="e#9189#9190#0" expanded="false" />
-            <element signature="e#20746#20747#0" expanded="false" />
-            <element signature="e#20774#20775#0" expanded="false" />
-            <element signature="e#20820#20821#0" expanded="false" />
-            <element signature="e#20856#20857#0" expanded="false" />
-            <element signature="e#20906#20907#0" expanded="false" />
-            <element signature="e#20953#20954#0" expanded="false" />
-            <element signature="e#21354#21355#0" expanded="false" />
-            <element signature="e#21421#21422#0" expanded="false" />
-            <element signature="e#21628#21629#0" expanded="false" />
-            <element signature="e#21692#21693#0" expanded="false" />
-            <element signature="e#23873#23874#0" expanded="false" />
-            <element signature="e#23926#23927#0" expanded="false" />
-            <element signature="e#23980#23981#0" expanded="false" />
-            <element signature="e#24048#24049#0" expanded="false" />
-            <element signature="e#24098#24099#0" expanded="false" />
-            <element signature="e#24149#24150#0" expanded="false" />
-            <element signature="e#40692#40693#0" expanded="false" />
-            <element signature="e#40750#40751#0" expanded="false" />
-            <element signature="e#51991#51992#0" expanded="false" />
-            <element signature="e#52022#52023#0" expanded="false" />
-            <element signature="e#52151#52152#0" expanded="false" />
-            <element signature="e#52183#52184#0" expanded="false" />
-            <element signature="e#70419#70420#0" expanded="false" />
-            <element signature="e#70482#70483#0" expanded="false" />
-            <element signature="e#71756#71757#0" expanded="false" />
-            <element signature="e#71781#71782#0" expanded="false" />
-            <element signature="e#75541#75542#0" expanded="false" />
-            <element signature="e#75584#75585#0" expanded="false" />
-            <element signature="e#75809#75810#0" expanded="false" />
-            <element signature="e#75835#75836#0" expanded="false" />
-            <element signature="e#76394#76395#0" expanded="false" />
-            <element signature="e#76420#76421#0" expanded="false" />
-            <element signature="e#76746#76747#0" expanded="false" />
-            <element signature="e#76772#76773#0" expanded="false" />
-            <element signature="e#76851#76852#0" expanded="false" />
-            <element signature="e#76877#76878#0" expanded="false" />
-            <element signature="e#76950#76951#0" expanded="false" />
-            <element signature="e#76976#76977#0" expanded="false" />
-            <element signature="e#77047#77048#0" expanded="false" />
-            <element signature="e#77073#77074#0" expanded="false" />
-            <element signature="e#77375#77376#0" expanded="false" />
-            <element signature="e#77401#77402#0" expanded="false" />
-            <element signature="e#77478#77479#0" expanded="false" />
-            <element signature="e#77504#77505#0" expanded="false" />
-            <element signature="e#78708#78709#0" expanded="false" />
-            <element signature="e#78769#78770#0" expanded="false" />
-            <element signature="e#84883#84884#0" expanded="false" />
-            <element signature="e#84940#84941#0" expanded="false" />
-            <element signature="e#85005#85006#0" expanded="false" />
-            <element signature="e#85052#85053#0" expanded="false" />
-            <element signature="e#85420#85421#0" expanded="false" />
-            <element signature="e#85478#85479#0" expanded="false" />
-            <element signature="e#85551#85552#0" expanded="false" />
-            <element signature="e#85605#85606#0" expanded="false" />
-            <element signature="e#85766#85767#0" expanded="false" />
-            <element signature="e#85810#85811#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/wrappers/CallPath.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        <state relative-caret-position="851">
+          <caret line="44" column="27" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -1236,11 +1168,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1656">
           <caret line="92" column="32" selection-start-line="92" selection-start-column="32" selection-end-line="92" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1913#1914#0" expanded="false" />
-            <element signature="e#1949#1950#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1248,14 +1176,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/AndroidAppDFSPathFinder.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1264,13 +1191,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/TargetedPathsAnalysis.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="83" column="9" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2331#2618#0" expanded="true" />
-            <element signature="e#2617#2618#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="214">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fu/hao/intellidroid/core/analysis/ConstraintAnalysis.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1339,7 +1270,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>com.ibm.wala.core-1.3.6-ANDROID_LISTENER</last-edited>
+          <last-edited>com.ibm.wala.shrike-1.3.7-javadoc</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

@@ -1,6 +1,13 @@
 package fu.hao.intellidroid.utils;
 
+import com.ibm.wala.classLoader.IMethod;
+import com.ibm.wala.ipa.callgraph.CGNode;
+import com.ibm.wala.util.collections.Pair;
+
 import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Class: Statistics
@@ -53,6 +60,25 @@ public class Statistics {
     public static void endConstraintAnalysis() {
         if (Settings.getGenerateStats()) {
             constraintEndTime = new Date();
+        }
+    }
+
+    private static Set<CGNode> pathNodes;
+    private static Set<Pair<IMethod, IMethod>> pathEdges;
+    public static void trackPath(List<CGNode> path, IMethod targetMethod) {
+        if (Settings.getGenerateStats()) {
+            pathNodes = new HashSet<>();
+            pathEdges = new HashSet<>();
+
+            pathNodes.addAll(path);
+            for (int i = 0; i < path.size() - 1; i++) {
+                pathEdges.add(Pair.make(path.get(i).getMethod(), path.get(i + 1).getMethod()));
+            }
+
+            if (targetMethod != null) {
+                pathEdges.add(Pair.make(path.get(path.size() - 1).getMethod(), targetMethod));
+            }
+
         }
     }
 
